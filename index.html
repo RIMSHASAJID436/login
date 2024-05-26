@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="icon" href="./img/login.jpg">
+    <style>
+       
+        input{
+           width: 200px;
+           height: 25px;
+           border: 1px solid rgb(148, 179, 238);
+           border-radius: 10px;
+        }
+        label{
+            font-weight: bolder;
+        }
+        .main{
+            padding: 20px;
+            line-height: 30px;
+            margin-left: 450px;
+            color: cornflowerblue;
+            font-size: large;
+        }
+        h1{
+            width:30%;
+            text-decoration: underline;
+            box-shadow: 0px 7px 7px rgb(137, 169, 230);
+            color: cornflowerblue;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 500px;
+        }
+        #login,#signup{
+            width: 80px;
+            box-shadow: 0px 7px 7px rgb(137, 169, 230);
+            color: rgb(70, 129, 238);
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgb(148, 179, 238);
+            height: 30px;
+            margin-top: 5px;
+        }
+       img{
+        position: relative;
+       }
+       .container{
+        position: absolute;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Login Form</h1>
+    <div class="main">
+    <label for="fname">First Name: <br><input type="text" required name="" id="fname" placeholder="Enter Your First Name"></label><br>
+    <label for="lname">Last Name: <br><input type="text" required name="" id="lname" placeholder="Enter Your Last Name"></label><br>
+    <label for="email">Email: <br><input type="email" required name="" id="email" placeholder="Enter Your Email"></label><br>
+    <label for="password">Password: <br><input type="password" required name="" id="password" placeholder="Enter Your Password"></label><br>
+    <label >Phone Number: <br><input type="number" required name="" id="number" placeholder="Enter Your Mobile Number"></label><br>
+    <button type="submit" id="signup" onclick="signUp()">Sign Up</button>
+
+    <button type="submit" id="login" onclick="login()">Login</button>
+
+</div>
+</div>
+<script>
+var fname = document.getElementById("fname");
+var lname = document.getElementById("lname");
+var email = document.getElementById("email");
+var password = document.getElementById("password");
+var number = document.getElementById("number");
+var submit = document.getElementById("login");
+
+function login(){
+    localStorage.setItem('text',fname.value)
+    localStorage.setItem('last',lname.value)
+    localStorage.setItem('email',email.value)
+    localStorage.setItem('password',password.value)
+    localStorage.setItem('num',number.value)
+    window.location.href='login.html' 
+}
+function signUp(){
+    var fname = document.getElementById("fname").value;
+var lname = document.getElementById("lname").value;
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+var number = document.getElementById("number").value;
+if(fname==''&& lname== '' && email == '' && password== '' && number == ''){
+    alert("Please Fill Out This Form")
+
+}else{
+    window.location.href='login.html' 
+
+}
+}
+</script>
+</body>
+</html>

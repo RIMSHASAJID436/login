@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        input {
+            width: 200px;
+            height: 25px;
+            border: 1px solid rgb(148, 179, 238);
+            border-radius: 10px;
+        }
+
+        label {
+            font-weight: bolder;
+        }
+
+        .main {
+            padding: 20px;
+            line-height: 30px;
+            margin-left: 500px;
+            color: cornflowerblue;
+            font-size: large;
+        }
+
+        h1 {
+            width: 20%;
+            text-decoration: underline;
+            box-shadow: 0px 7px 7px rgb(137, 169, 230);
+            color: cornflowerblue;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 500px;
+        }
+
+        #login {
+            width: 80px;
+            box-shadow: 0px 7px 7px rgb(137, 169, 230);
+            color: rgb(70, 129, 238);
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgb(148, 179, 238);
+            height: 30px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login Confirm</h1>
+    <div class="main">
+        <label for="email">Email: <br><input type="email" name="" id="email" placeholder="Enter Your Email"></label><br>
+        <label for="password">Password: <br><input type="password" name="" id="password"
+                placeholder="Enter Your Password"></label><br>
+
+        <button type="submit" id="login" onclick="confirmLogin()">Login</button>
+
+    </div>
+    <script>
+
+        function confirmLogin() {
+            var confirmEmail = document.getElementById("email").value
+            var confirmPassword = document.getElementById("password").value
+            if (confirmEmail == localStorage.getItem("email") && confirmPassword == localStorage.getItem("password")) {
+              alert('Login Successfully!')
+            } else if (confirmEmail == "") {
+                alert("please enter your email")
+            } else if (confirmPassword == "") {
+                alert("please enter your password")
+            }
+            else if (confirmEmail != localStorage.getItem("email")) {
+                alert("please write the correct email")
+            }
+            else if (confirmPassword != localStorage.getItem("password")) {
+                alert("please write the correct password")
+            }
+            else {
+                alert("Please Enter a Valid UserName And Password")
+            }
+        };
+    </script>
+
+</body>
+
+</html>
