@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width:30%;
+            text-decoration: underline;
+            box-shadow: 0px 7px 7px rgb(137, 169, 230);
+            color: cornflowerblue;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 450px;
+        }
+        .main{
+            margin-top: 20px;
+            margin-left: 550px;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>LinkedIn</h1>
+    <div class="main">
+<p id="tex"></p>
+
+</div>
+<script>
+   
+var firstName = localStorage.getItem('text')
+var lastNAme = localStorage.getItem('last')
+
+var fulName = firstName + " "+lastNAme
+var name =  fulName.toUpperCase()
+
+var show = document.getElementById('tex')
+
+show.textContent=name
+
+</script>
+</body>
+</html>
